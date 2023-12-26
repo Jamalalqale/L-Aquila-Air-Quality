@@ -1,8 +1,7 @@
 1- Preheat the sensro: Connect the sensor to the Arduino and leave it running for 48 hours in clean ear. it's better for the tempetature to be 20c and the humidity is 33%.
 
 2- Calculate R0: After 48 of preheating, calculate the R0 in clean air.
-- Open arduino IDE and load the MQ135 Library(Sketch>>Include Library)
--Open the MQ135.h (C:\Users\[USERNAME]\Documents\Arduino\libraries\MQ135) and set the value float rload=1.0
--Conncet arduino board and upload the code in the file Calculate_R0.ino and wait until the R0 reach to fixed value (30-1h)
+-Open arduino IDE and load the MQ135 Library(Sketch>>Include Library)
+-Conncet arduino board and upload the code in the file MQxxCalibration.ino and wait until the R0 reach to fixed value (30-1h)
 -Open the MQ135.h and set the float rzero to the value calculated from the previous step.
--Now, we are ready to read gas consentration by uploading the code if the file Calculate_Gas_PPM.ino
+-Now, we are ready to read gas consentration by uploading the code if the file MqxxReading.ino
