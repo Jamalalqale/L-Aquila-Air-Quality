@@ -35,7 +35,7 @@ void loop() {
   MQ7.update();
   //Read the sensor and print in serial port
   float lecture =  MQ7.calibrate(RatioMQ7CleanAir);
-  Serial.println(lecture);
+  Serial.println(lecture/10);
   delay(400);  
   if(isinf(lecture)) {Serial.println("Warning: Conection issue, R0 is infinite (Open circuit detected) please check your wiring and supply"); while(1);}
   if(lecture == 0){Serial.println("Warning: Conection issue found, R0 is zero (Analog pin shorts to ground) please check your wiring and supply"); while(1);}  

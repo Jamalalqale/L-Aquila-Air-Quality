@@ -20,6 +20,6 @@ void setup() {
 void loop() {
   MQ135.update(); // Update data, the arduino will read the voltage from the analog pin
   float calcR0 = MQ135.calibrate(RatioMQ135CleanAir);
-  Serial.println(calcR0);
+  Serial.println(calcR0/10);
   delay(500); //Sampling frequency
 }

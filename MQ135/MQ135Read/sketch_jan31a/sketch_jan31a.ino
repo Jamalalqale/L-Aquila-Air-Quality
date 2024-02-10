@@ -3,7 +3,7 @@
 //Definitions
 #define placa "Arduino UNO"
 #define Voltage_Resolution 5
-#define pin A0 //Analog input 0 of your arduino
+#define pin A1 //Analog input 0 of your arduino
 #define type "MQ-135" //MQ135
 #define ADC_Bit_Resolution 10 // For arduino UNO/MEGA/NANO
 #define RatioMQ135CleanAir 3.6//RS / R0 = 3.6 ppm  
@@ -15,9 +15,9 @@ MQUnifiedsensor MQ135(placa, Voltage_Resolution, ADC_Bit_Resolution, pin, type);
 void setup() {
   Serial.begin(9600); //Init serial port 
   MQ135.setRegressionMethod(1); //_PPM =  a*ratio^b  
-  MQ135.init(); 
   MQ135.setRL(1);
-  MQ135.setR0(0.0);//set R0
+  MQ135.setR0(0.06);//set R0
+  MQ135.init(); 
   Serial.println("** Values from MQ-135 ****");
   Serial.println("|    CO   |  Alcohol |   CO2  |  Toluen  |  NH4  |  Aceton  |");  
 }
@@ -65,5 +65,5 @@ void loop() {
   NH4      | 102.2  | -2.473
   Aceton  | 34.668 | -3.369
   */
-  delay(500); //Sampling frequency
+  delay(3000); //Sampling frequency
 }
