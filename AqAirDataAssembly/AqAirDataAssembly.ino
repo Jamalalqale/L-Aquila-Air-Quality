@@ -8,5 +8,6 @@ void setup() {
 
 void loop() {
   myMQ135.readMQ135();
-  // Additional code if needed
+
+   delay(1000); //Sampling frequency
 }
